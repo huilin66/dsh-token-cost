@@ -35,7 +35,7 @@ await build({
 // the browser module loader. React, react/jsx-runtime, and @deepseek-ai/*
 // stay external and resolve through __ModuleLoader__ at runtime.
 const banner = `window.__ModuleLoader__.load({
-  id: "@local/dsh-token-cost",
+  id: "dsh-token-cost",
   factory: (require) => {
     var module = { exports: {} };
     var exports = module.exports;
