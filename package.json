@@ -36,7 +36,8 @@
     "lib/client.js",
     "lib/types/**/*.d.ts",
     "update-prices.mjs",
-    "README.md"
+    "README.md",
+    "README.zh.md"
   ],
   "license": "MIT",
   "keywords": [
@@ -62,6 +63,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-name/dsh-token-cost.git"
+    "url": "https://github.com/huilin66/dsh-token-cost.git"
   }
 }

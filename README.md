@@ -1,10 +1,12 @@
 # dsh-token-cost
 
+English | [中文](README.zh.md)
+
 Token cost tracking plugin for [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness).
 
-- **Per-session cost** shown in the session header: `💰 ¥1.48` (hover: "估算费用，以官方账单为准")
+- **Per-session cost** shown in the session header: `💰 ¥1.48` (hover tooltip notes it is an estimate and the official bill wins)
 - **Per-message cost** on every assistant message's action row, revealed on hover together with the run-time stats line
-- **Settings → 费用统计**: cross-session totals with a per-model breakdown
+- **Settings → Token cost**: cross-session totals with a per-model breakdown
 - Prices priced per-million-token from **official DeepSeek prices, synced automatically by a daily script**
 
 ## Installation

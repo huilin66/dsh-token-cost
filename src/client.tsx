@@ -41,12 +41,15 @@ const zh = {
   "format.tokens": "{value}"
 };
 
-/** English dictionary checked against the Chinese key set. */
+/** English dictionary checked against the Chinese key set.
+ * Currency is always CNY (the plugin prices in RMB), so the symbol is ¥ in
+ * every language — only the surrounding copy is translated.
+ */
 const en = {
   "header.title": "Est. cost",
-  "header.estimate": "💰 ${amount}",
+  "header.estimate": "💰 ¥{amount}",
   "header.tip": "Estimated cost; the official bill wins.",
-  "message.cost": "💰 ${amount}",
+  "message.cost": "💰 ¥{amount}",
   "message.tip": "Estimated cost for this message; the official bill wins.",
   "section.nav": "Token cost",
   "section.title": "Token cost (estimated)",
@@ -57,7 +60,7 @@ const en = {
   "section.tokens": "{input} in · {output} out",
   "section.cost": "Cost",
   "section.estimateTip": "All figures are estimates; the official bill wins.",
-  "format.cost": "${amount}",
+  "format.cost": "¥{amount}",
   "format.tokens": "{value}"
 };
 
