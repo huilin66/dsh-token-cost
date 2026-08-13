@@ -1,7 +1,7 @@
 {
   "name": "dsh-token-cost",
   "description": "Token cost tracking for DeepSeek Harness: per-session and per-message cost projection with a web summary surface. Official DeepSeek prices are synced automatically by a daily script.",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "type": "module",
   "main": "lib/index.js",
   "types": "lib/types/index.d.ts",
