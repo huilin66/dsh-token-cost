@@ -145,7 +145,7 @@ function injectMessageCostCss() {
   if (typeof document === "undefined") return;
   if (document.querySelector("style[data-plugin-css=\"dsh-token-cost/message-cost\"]") !== null) return;
   const tag = document.createElement("style");
-  tag.dataset.plugin = "@local/dsh-token-cost";
+  tag.dataset.plugin = "dsh-token-cost";
   tag.dataset.pluginCss = "dsh-token-cost/message-cost";
   tag.textContent = messageCostCss;
   document.head.appendChild(tag);

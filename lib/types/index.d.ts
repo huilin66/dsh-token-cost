@@ -5,7 +5,7 @@
  * session-projection type table, so host and client aggregates see the key
  * through the standard seam without importing each other.
  *
- * @module @local/dsh-token-cost
+ * @module dsh-token-cost
  */
 import type { SessionProjectionMap } from "@deepseek-ai/dsh-session-projection/types";
 
