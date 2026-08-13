@@ -11,6 +11,22 @@
 
 ## 安装
 
+### 一条命令（推荐，无需 pnpm）
+
+```powershell
+npx dsh-token-cost setup
+```
+
+这条命令会自动：把插件安装到你的 `web` profile（缺 pnpm 时通过 corepack 自动启用）、写入 `cordis.patch.yml` 配置、创建价格目录。重复执行安全（幂等）。
+
+安装到其他 profile（例如 `tui`）：
+
+```powershell
+npx dsh-token-cost setup --profile tui
+```
+
+### 通过 dsh（需要 pnpm）
+
 ```powershell
 # 在 dsh profile 目录（例如 ~/.dsh/profiles/web）
 cd ~/.dsh/profiles/web

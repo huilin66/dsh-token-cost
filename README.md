@@ -11,6 +11,22 @@ Token cost tracking plugin for [DeepSeek Harness](https://github.com/deepseek-ai
 
 ## Installation
 
+### One command (recommended — no pnpm required)
+
+```powershell
+npx dsh-token-cost setup
+```
+
+This installs the plugin into your `web` profile (enabling pnpm through corepack when missing), appends the `cordis.patch.yml` row, and creates the prices directory. Re-running is safe (idempotent).
+
+For another profile (e.g. `tui`):
+
+```powershell
+npx dsh-token-cost setup --profile tui
+```
+
+### Via dsh (requires pnpm)
+
 ```powershell
 # in your dsh profile directory (e.g. ~/.dsh/profiles/web)
 cd ~/.dsh/profiles/web
