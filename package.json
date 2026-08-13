@@ -1,0 +1,67 @@
+{
+  "name": "dsh-token-cost",
+  "description": "Token cost tracking for DeepSeek Harness: per-session and per-message cost projection with a web summary surface. Official DeepSeek prices are synced automatically by a daily script.",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./update-prices.mjs": "./update-prices.mjs",
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "dsh-token-cost-update": "./update-prices.mjs"
+  },
+  "dsh": {
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-client-ui-slots",
+        "@deepseek-ai/dsh-client-ui-settings"
+      ],
+      "platform": "web"
+    }
+  },
+  "files": [
+    "lib/index.js",
+    "lib/client.js",
+    "lib/types/**/*.d.ts",
+    "update-prices.mjs",
+    "README.md"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "deepseek",
+    "harness",
+    "dsh",
+    "token",
+    "cost",
+    "pricing",
+    "plugin"
+  ],
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1",
+    "@deepseek-ai/dsh-llm": "^0.1.0-rc.6",
+    "@deepseek-ai/dsh-session": "^0.1.0-rc.6",
+    "@deepseek-ai/dsh-session-projection": "^0.1.0-rc.6",
+    "@deepseek-ai/schemastery": "^3.18.1",
+    "react": "^18.2.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.12"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-name/dsh-token-cost.git"
+  }
+}
