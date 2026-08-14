@@ -21,6 +21,7 @@ const { execFileSync } = require("node:child_process");
 const { existsSync, mkdirSync, readFileSync, writeFileSync } = require("node:fs");
 const { homedir } = require("node:os");
 const { join, resolve } = require("node:path");
+const { normalizePatchContent } = require("./patch-utils.cjs");
 
 const PACKAGE_NAME = "dsh-token-cost";
 const PLUGIN_ID = "token-cost";
@@ -80,9 +81,12 @@ function ensurePatchRow(dir) {
     "        prices: {}"
   ].join("\n");
 
-  let content = "";
-  if (existsSync(patchPath)) content = readFileSync(patchPath, "utf8");
-  if (content.includes("- id: " + PLUGIN_ID)) return false; // already installed
+  const originalContent = existsSync(patchPath) ? readFileSync(patchPath, "utf8") : "";
+  let content = normalizePatchContent(originalContent);
+  if (content.includes("- id: " + PLUGIN_ID)) {
+    if (content !== originalContent) writeFileSync(patchPath, content, "utf8");
+    return false; // already installed; normalized an old malformed overlay if needed
+  }
   const separator = content.length > 0 && !content.endsWith("\n") ? "\n" : "";
   writeFileSync(patchPath, content + separator + row + "\n", "utf8");
   return true;
